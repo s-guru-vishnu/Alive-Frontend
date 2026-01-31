@@ -94,10 +94,10 @@ const Layout = ({ children }) => {
               <Link to="/" className="flex items-center px-2 py-2 group">
                 <img
                   src="/Logo.png"
-                  alt="Heart2Heal Logo"
+                  alt="ALIVE Logo"
                   className="w-8 h-8 sm:w-10 sm:h-10 transition-transform group-hover:scale-110 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.8)]"
                 />
-                <span className="ml-3 text-xl sm:text-2xl font-display font-bold text-gray-900 tracking-tight">Heart2Heal</span>
+                <span className="ml-3 text-xl sm:text-2xl font-display font-bold text-gray-900 tracking-tight">ALIVE</span>
               </Link>
               {/* Desktop Navigation */}
               <div className="hidden md:ml-8 md:flex md:space-x-1">

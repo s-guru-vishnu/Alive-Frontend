@@ -18,10 +18,10 @@ const Footer = () => {
             <Link to="/" className="flex items-center mb-4 group">
               <img
                 src="/Logo.png"
-                alt="Heart2Heal Logo"
+                alt="ALIVE Logo"
                 className="w-10 h-10 transition-transform group-hover:scale-110 object-contain"
               />
-              <span className="ml-3 text-2xl font-display font-bold text-white">Heart2Heal</span>
+              <span className="ml-3 text-2xl font-display font-bold text-white">ALIVE</span>
             </Link>
             <p className="text-sm text-gray-400 mb-4 leading-relaxed">
               Connecting donors with hospitals to save lives efficiently and effectively.
@@ -157,7 +157,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-sm text-gray-400 text-center md:text-left">
-              <p>&copy; {currentYear} Heart2Heal. All rights reserved.</p>
+              <p>&copy; {currentYear} ALIVE. All rights reserved.</p>
               <p className="mt-1">Saving lives, one donation at a time.</p>
             </div>
 
