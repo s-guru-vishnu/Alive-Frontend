@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import anime from 'animejs/lib/anime.es.js';
+import { createTimeline, animate, stagger, remove } from 'animejs';
 
 const AliveAnimation = ({ className = "" }) => {
     const containerRef = useRef(null);
@@ -10,12 +10,20 @@ const AliveAnimation = ({ className = "" }) => {
 
     useEffect(() => {
         if (!containerRef.current) return;
+        console.log('AliveAnimation: Component mounted and useEffect running');
 
         // Target elements we just rendered
         const wordEl = containerRef.current.querySelectorAll('.word');
         const charEls = containerRef.current.querySelectorAll('.char');
 
-        const timeline = anime.timeline({
+        if (wordEl.length === 0 || charEls.length === 0) {
+            console.warn('AliveAnimation: Elements not found in DOM');
+            return;
+        }
+
+        console.log(`AliveAnimation: Found ${wordEl.length} word and ${charEls.length} chars`);
+
+        const timeline = createTimeline({
             loop: true,
             defaults: { ease: 'easeInOutSine', duration: 650 }
         });
@@ -24,12 +32,7 @@ const AliveAnimation = ({ className = "" }) => {
             .add({
                 targets: wordEl,
                 translateY: [
-                    {
-                        value: (el) => {
-                            // We can check dataset here if needed, or just hardcode for the single word
-                            return -10; // Simple initial offset
-                        }, duration: 0
-                    },
+                    { value: -10, duration: 0 },
                     { value: 0, duration: 650 }
                 ],
             })
@@ -45,20 +48,22 @@ const AliveAnimation = ({ className = "" }) => {
             }, 0);
 
         // Secondary "breathing" animation
-        anime({
+        const breathing = animate({
             targets: charEls,
             translateY: ['-10%', '10%'],
             direction: 'alternate',
             loop: true,
-            delay: anime.stagger(100),
+            delay: stagger(100),
             easing: 'easeInOutSine',
             duration: 800
         });
 
         return () => {
+            console.log('AliveAnimation: Cleanup');
             timeline.pause();
-            anime.remove(charEls);
-            anime.remove(wordEl);
+            if (breathing && breathing.pause) breathing.pause();
+            remove(charEls);
+            remove(wordEl);
         };
     }, []);
 
