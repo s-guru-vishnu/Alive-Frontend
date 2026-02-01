@@ -677,7 +677,7 @@ const Register = () => {
                               <div className="w-12 h-12 rounded-full bg-gray-100 text-gray-400 group-hover:bg-primary-50 group-hover:text-primary-500 transition-colors flex items-center justify-center mb-3">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0c0 .884-.5 2-2 2h4c-1.5 0-2-1.116-2-2z"></path></svg>
                               </div>
-                              <p className="text-sm font-bold text-gray-700 group-hover:text-primary-600 transition-colors">Admin Gov ID</p>
+                              <p className="text-sm font-bold text-gray-700 group-hover:text-primary-600 transition-colors">Admin/Owner ID</p>
                               <p className="text-xs text-gray-500 mt-1">Aadhaar, PAN, License</p>
                             </>
                           )}
