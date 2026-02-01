@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 // Common Pages
+// Common Pages
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -10,6 +11,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
 import Community from './pages/Community';
+import VerificationRequired from './pages/VerificationRequired';
 
 // Donor Pages
 import DonorDashboard from './pages/donor/DonorDashboard';
@@ -35,6 +37,7 @@ import UserManagement from './pages/admin/UserManagement';
 import HospitalVerification from './pages/admin/HospitalVerification';
 import Reports from './pages/admin/Reports';
 import Analytics from './pages/admin/Analytics';
+import VerificationDashboard from './pages/admin/VerificationDashboard';
 
 // Protected Route Component
 import ProtectedRoute from './components/ProtectedRoute';
@@ -58,6 +61,14 @@ const AppRoutes = () => {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route
+        path="/verification-pending"
+        element={
+          <ProtectedRoute>
+            <VerificationRequired />
+          </ProtectedRoute>
+        }
+      />
 
       {/* Donor Routes */}
       <Route
@@ -192,6 +203,14 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute requiredRole="admin">
             <HospitalVerification />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/verification"
+        element={
+          <ProtectedRoute requiredRole="admin">
+            <VerificationDashboard />
           </ProtectedRoute>
         }
       />

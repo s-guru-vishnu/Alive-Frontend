@@ -56,7 +56,7 @@ const AlertCard = ({ message, type = 'error', onClose, className = '' }) => {
                     <path d="m6 6 12 12" />
                 </svg>
             </button>
-            <p className="flex flex-row items-center mr-auto gap-x-2">
+            <div className="flex flex-row items-center mr-auto gap-x-2">
                 {isError && (
                     <svg stroke="currentColor" fill="none" strokeWidth={2} viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height={28} width={28} className="h-7 w-7" xmlns="http://www.w3.org/2000/svg">
                         <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
@@ -70,8 +70,10 @@ const AlertCard = ({ message, type = 'error', onClose, className = '' }) => {
                         <polyline points="22 4 12 14.01 9 11.01"></polyline>
                     </svg>
                 )}
-                {message}
-            </p>
+                <div className="text-sm font-medium">
+                    {message}
+                </div>
+            </div>
         </div>
     );
 }

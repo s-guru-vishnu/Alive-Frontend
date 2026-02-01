@@ -63,15 +63,25 @@ const Login = () => {
     try {
       const response = await login(formData);
       authLogin(response.user);
-      navigate(
-        response.user.role === 'donor'
-          ? '/donor/dashboard'
-          : response.user.role === 'hospital'
-            ? '/hospital/dashboard'
-            : response.user.role === 'blood-bank'
-              ? '/blood-bank/dashboard'
-              : '/admin/dashboard'
-      );
+
+      let path = '/';
+      const { role, profile } = response.user;
+
+      if (role === 'hospital' || role === 'blood-bank') {
+        // Check verification status (profile should be populated from backend login)
+        const verificationStatus = profile?.verificationStatus || 'pending';
+        if (verificationStatus !== 'approved') {
+          path = '/verification-pending';
+        } else {
+          path = role === 'hospital' ? '/hospital/dashboard' : '/blood-bank/dashboard';
+        }
+      } else if (role === 'donor') {
+        path = '/donor/dashboard';
+      } else if (role === 'admin') {
+        path = '/admin/dashboard';
+      }
+
+      navigate(path);
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please try again.');
     } finally {
