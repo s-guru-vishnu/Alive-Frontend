@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { logout } from '../services/authService';
 import { BloodDropIcon, HospitalIcon, SettingsIcon, UserIcon, DashboardIcon, LogoutIcon } from './icons/Icons';
 import Footer from './Footer';
+import AliveAnimation from './ui/AliveAnimation';
 
 const Layout = ({ children }) => {
   const { user, isAuthenticated, logout: authLogout } = useAuth();
@@ -97,7 +98,7 @@ const Layout = ({ children }) => {
                   alt="ALIVE Logo"
                   className="w-8 h-8 sm:w-10 sm:h-10 transition-transform group-hover:scale-110 object-contain drop-shadow-[0_4px_6px_rgba(0,0,0,0.8)]"
                 />
-                <span className="ml-3 text-xl sm:text-2xl font-display font-bold text-gray-900 tracking-tight">ALIVE</span>
+                <AliveAnimation className="ml-3 text-xl sm:text-2xl font-display font-bold text-gray-900 tracking-tight" />
               </Link>
               {/* Desktop Navigation */}
               <div className="hidden md:ml-8 md:flex md:space-x-1">
