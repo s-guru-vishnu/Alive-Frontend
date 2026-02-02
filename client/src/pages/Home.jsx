@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import api from '../services/api';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { HeroSection } from '../components/hero';
@@ -25,6 +26,13 @@ import benefitCommunity from '../assets/benefit-community.png';
 import SuccessStoryCard from '../components/SuccessStoryCard';
 
 const Home = () => {
+  useEffect(() => {
+    // Wake up/Health check the backend
+    api.get('/health')
+      .then(() => console.log('Backend connection established'))
+      .catch(err => console.error('Backend connection failed:', err));
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section with 3D Animation */}
