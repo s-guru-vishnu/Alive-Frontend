@@ -171,6 +171,17 @@ const Register = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    // Block "Admin" keyword in text inputs
+    if (type !== 'checkbox' && typeof value === 'string' && value.toLowerCase().includes('admin')) {
+      setError('The word "Admin" is not allowed in any field.');
+      return;
+    } else {
+      if (error === 'The word "Admin" is not allowed in any field.') {
+        setError('');
+      }
+    }
+
     setFormData({
       ...formData,
       [name]: type === 'checkbox' ? checked : value

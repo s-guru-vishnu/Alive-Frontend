@@ -46,7 +46,7 @@ const AdminDashboard = () => {
             </div>
             <div className="bg-white rounded-lg shadow p-6">
               <div className="flex items-center">
-                <div className="text-3xl font-bold text-blue-600">{reports?.overview?.totalDonors - 1 || 0}</div>
+                <div className="text-3xl font-bold text-blue-600">{reports?.overview?.totalDonors - 2 || 0}</div>
                 <div className="ml-4">
                   <div className="text-sm text-gray-600">Donors</div>
                   <div className="text-xs text-gray-500">Active donors</div>
