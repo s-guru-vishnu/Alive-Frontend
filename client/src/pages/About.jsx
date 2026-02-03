@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
-import { BloodDropIcon, HandshakeIcon, HeartIcon, AlertIcon, LockIcon, MobileIcon, LocationIcon, DashboardIcon, TrophyIcon, HospitalIcon, GlobeIcon } from '../components/icons/Icons';
+import { BloodDropIcon, HandshakeIcon, HeartIcon, AlertIcon, LockIcon, MobileIcon, LocationIcon, DashboardIcon, TrophyIcon, HospitalIcon, GlobeIcon, GovtIcon, NgoIcon, MedicalIcon, FireIcon } from '../components/icons/Icons';
 import { motion } from 'framer-motion';
 import SolutionCard from '../components/About/SolutionCard';
 
@@ -113,7 +113,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center mx-auto mb-5 shadow-elegant">
-                <AlertIcon className="w-12 h-12 rotate-90" fill="#3B82F6" />
+                <FireIcon className="w-12 h-12" />
               </div>
               <h3 className="text-xl font-display font-semibold mb-3 text-gray-900">Efficiency</h3>
               <p className="text-gray-600 leading-relaxed">
@@ -220,7 +220,7 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <div className="mb-3 flex items-center justify-center">
-                <GlobeIcon className="w-12 h-12" fill="#10B981" />
+                <GovtIcon className="w-12 h-12" />
               </div>
               <h3 className="font-display font-semibold text-gray-900">Government Bodies</h3>
               <p className="text-sm text-gray-600 mt-2">Working with health departments</p>
@@ -231,7 +231,9 @@ const About = () => {
               {...cardHover}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="text-3xl mb-3">💼</div>
+              <div className="mb-3 flex items-center justify-center">
+                <NgoIcon className="w-12 h-12" />
+              </div>
               <h3 className="font-semibold">NGOs</h3>
               <p className="text-sm text-gray-600 mt-2">Collaborating with non-profits</p>
             </motion.div>
@@ -241,7 +243,9 @@ const About = () => {
               {...cardHover}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="text-3xl mb-3">🎓</div>
+              <div className="mb-3 flex items-center justify-center">
+                <MedicalIcon className="w-12 h-12" />
+              </div>
               <h3 className="font-semibold">Medical Institutions</h3>
               <p className="text-sm text-gray-600 mt-2">Partnerships with medical colleges</p>
             </motion.div>

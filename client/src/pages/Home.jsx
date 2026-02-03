@@ -14,7 +14,8 @@ import {
   AlertIcon,
   HeartIcon,
   StarIcon,
-  UserIcon
+  UserIcon,
+  ThunderIcon
 } from '../components/icons/Icons';
 import { AnimatedCard } from '../animations/microInteractions';
 import { StaggerContainer } from '../animations/pageTransitions';
@@ -62,9 +63,7 @@ const Home = () => {
           </AnimatedCard>
           <AnimatedCard index={2} className="bg-white p-8 rounded-xl shadow-elegant hover:shadow-classic-lg transition-all duration-300 border border-gray-100">
             <div className="mb-4 flex items-center justify-center">
-              <svg className="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 3L4 14H11V21L20 10H13V3Z" fill="#F59E0B" />
-              </svg>
+              <ThunderIcon className="w-16 h-16" />
             </div>
             <h3 className="text-xl font-display font-semibold mb-3 text-gray-900">Quick Matching</h3>
             <p className="text-gray-600 leading-relaxed">

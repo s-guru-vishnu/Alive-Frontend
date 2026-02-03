@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'Noto Color Emoji', 'system-ui', 'sans-serif'],
         display: ['Playfair Display', 'serif'],
       },
       colors: {
