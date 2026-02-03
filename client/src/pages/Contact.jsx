@@ -50,8 +50,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <a href="mailto:heart2heal2028@gmail.com" className="text-primary-600 hover:text-primary-700">
-                    heart2heal2028@gmail.com
+                  <a href="mailto:alive-connect@support.com" className="text-primary-600 hover:text-primary-700">
+                    alive-connect@support.com
                   </a>
                   <p className="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
                 </div>
