@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   const getProfilePictureUrl = () => {
     // For admin users without profile picture, use default admin avatar
     if (user?.role === 'admin' && !user?.profilePicture) {
-      return '/Admin_Profile_Image.png';
+      return '/Admin_Profile_v2.png';
     }
     if (!user?.profilePicture) return null;
     const baseUrl = import.meta.env.VITE_API_URL;
